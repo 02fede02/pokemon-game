@@ -1,0 +1,46 @@
+body {
+	background-color: #3946fa;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	padding: 8px;
+}
+
+img{
+	
+	height: 300px;	
+}
+
+.moltres {
+	width: 400px;
+}
+
+header {
+	text-align: center;	
+	font-size: 0.75cm;
+
+}
+
+h1, .score {
+	color: #f3f719;
+}
+
+
+.score {
+	text-align: center;
+}
+
+
+.score-game {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	color: #c20505;
+}
+
+.result {
+	text-align: center;
+	margin-top: 32px;
+}
