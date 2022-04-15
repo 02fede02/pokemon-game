@@ -1,9 +1,9 @@
-
+//Initial values
 const pokemon = ["Charmander", "Squirtirle", "Bulbasaur"];
 let playerWins;
 let playerScore = 0;
 let computerScore = 0;
-
+//Selecting user pokemon
 const charmander = document.querySelector(".charmander");
 const squirtirle = document.querySelector(".squirtirle");
 const bulbasaur = document.querySelector(".bulbasaur");
@@ -11,6 +11,7 @@ const bulbasaur = document.querySelector(".bulbasaur");
 const playerScoreMark = document.querySelector(".player-score");
 const computerScoreMark = document.querySelector(".computer-score");
 const result = document.querySelector(".result");
+const container = document.querySelector(".container");
 
 charmander.addEventListener("click", () => {
     const playerSelection = pokemon[0];
@@ -42,25 +43,38 @@ function playRound (playerSelection, computerSelection) {
 	if (playerSelection === computerSelection) {
 		playerWins = undefined;
 		result.textContent = `It's a draw, you choose the same ${playerSelection}`;
+		
 	}
 	else if (playerSelection === "Charmander" && computerSelection === "Squirtirle" ) {
 		playerWins = false;
 		result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
+		//Gana squirtrle
+		container.style.background = "#58dae8";
 	} else if (playerSelection === "Charmander" && computerSelection === "Bulbasaur") {
+		//Gana Charmander
 		playerWins = true;
 		result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
+		container.style.background = "#ff851a";
 	}  else if (playerSelection === "Squirtirle" && computerSelection === "Bulbasaur") {
+		//Gana Bulbasaur
 		playerWins = false;
 		result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
+		container.style.background = "#5bb541";
 	} else if (playerSelection === "Squirtirle" && computerSelection === "Charmander") {
+		//Gana Squirtirle
 		playerWins = true;
 		result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
+		container.style.background = "#58dae8";
 	}  else if (playerSelection === "Bulbasaur" && computerSelection === "Charmander") {
+		//Gana Charmander
 		playerWins = false;
 		result.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
+		container.style.background = "#ff851a";
 	} else if (playerSelection === "Bulbasaur" && computerSelection === "Squirtirle") {
+		//Gana bulbasaur
 		result.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
 		playerWins = true;
+		container.style.background = "#5bb541";
 	}
 }
 

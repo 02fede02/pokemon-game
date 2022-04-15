@@ -1,11 +1,17 @@
+html, body, .title, .container {
+	padding: 0;
+	margin: 0;
+}
+
 body {
-	background-color: #3946fa;
+	background: #2525df;
 }
 
 .container {
 	display: flex;
 	justify-content: space-around;
 	padding: 8px;
+
 }
 
 img{
@@ -13,23 +19,22 @@ img{
 	height: 300px;	
 }
 
-.moltres {
-	width: 400px;
-}
-
-header {
+.title {
 	text-align: center;	
-	font-size: 0.75cm;
-
+	font-size: 42px;
+	color: #e5e900;
+	background: #2525df;
+	margin-top: -58px;
 }
 
-h1, .score {
-	color: #f3f719;
-}
 
 
 .score {
 	text-align: center;
+	color: #e5e900;
+	background: #2525df;
+	margin-top: -57px;
+	padding-top: 5px;
 }
 
 
@@ -37,10 +42,12 @@ h1, .score {
 	display: flex;
 	justify-content: center;
 	gap: 16px;
-	color: #c20505;
+	color: #e5e900;
+	margin-top: -25px;
 }
 
 .result {
 	text-align: center;
 	margin-top: 32px;
+	color:#e5e900;
 }
