@@ -3,6 +3,8 @@ const pokemon = ["Charmander", "Squirtirle", "Bulbasaur"];
 let playerWins;
 let playerScore = 0;
 let computerScore = 0;
+
+
 //Selecting user pokemon
 const charmander = document.querySelector(".charmander");
 const squirtirle = document.querySelector(".squirtirle");
@@ -12,27 +14,40 @@ const playerScoreMark = document.querySelector(".player-score");
 const computerScoreMark = document.querySelector(".computer-score");
 const result = document.querySelector(".result");
 const container = document.querySelector(".container");
+const btnRestart = document.querySelector(".btn-restart");
+//Capaz que si pongo para que chekkee cual es la clase y ahi darle la seleccion del jugador
 
-charmander.addEventListener("click", () => {
-    const playerSelection = pokemon[0];
+charmander.addEventListener("click", (e) => {
+	const playerSelection = pokemon[0];
 	const computerChoosen = computerPlay();
 	playRound(playerSelection, computerChoosen);
 	game();
 })
 
-squirtirle.addEventListener("click", () => {
+squirtirle.addEventListener("click", (e) => {
     const playerSelection = pokemon[1];
 	const computerChoosen = computerPlay();
 	playRound(playerSelection, computerChoosen);
 	game();
 })
 
-bulbasaur.addEventListener("click", () => {
+bulbasaur.addEventListener("click", (e) => {
     const playerSelection = pokemon[2];
 	const computerChoosen = computerPlay();
 	playRound(playerSelection, computerChoosen);
 	game();
 })
+
+btnRestart.addEventListener("click", () => {
+	playerWins = undefined;
+	playerScore = 0;
+	computerScore = 0;
+	result.textContent = "";
+	playerScoreMark.textContent = `Player score: ${playerScore}`;
+	computerScoreMark.textContent = `Computer score: ${computerScore}`;
+	btnRestart.style.display = "none";
+})
+
 
 function computerPlay() {
 	let numb = Math.floor(Math.random() * (3 - 0) + 0);
@@ -96,9 +111,13 @@ function game() {
 		console.log(playerWins, playerScore, computerScore)
 	// Habria que cerrar el for con } 
 	if (playerScore === 5) {
+		
 		result.textContent = "You won the game";
+		btnRestart.style.display = "flex";
+
 	} else if (computerScore === 5) {
 		result.textContent = "You lose the game";
+		btnRestart.style.display = "flex";
 	}
 		//else {
 		//console.log("It's a draw");
